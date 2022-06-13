@@ -161,23 +161,23 @@ def reset():
     hash = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 
 
-while jogarNovamente.lower() == "s":
-    while True:
-        Jogo()
-        jogadorUmJoga()
-        Jogo()
-        jogadorDoisJoga()
-        Jogo()
+while jogarNovamente.lower() == "s": #.lower = Caso o "S" seja maiusculo, ele é convertido em minusculo "s".
+    while True: #looping funcionando infinitamente até que um break pare ele.
+        Jogo() #atualiza o tabuleiro
+        jogadorUmJoga() #jogada do jogador 1
+        Jogo() #atualiza o tabuleiro
+        jogadorDoisJoga() #jogada do jogador 2
+        Jogo() #atualiza o tabuleiro
         winner = verificarVitoria() #Sempre n, ate que alguém ganhe.
-        if (winner != "n") or (jogadas >= maxJogadas):
-            break
+        if (winner != "n") or (jogadas >= maxJogadas): #Caso não seja atendido, o loop continua.
+            break #Para o loop caso o if seja atendido.
 
     print("Fim de jogo!")
     if winner == "X" or winner == "O":
-        print("O jogador" ,winner, "venceu!")
+        print("O jogador",winner,"venceu!")
     else:
         print("Deu velha!")
 
     jogarNovamente = input("Jogar novamente? [s/n]:")
     reset()
-    print("Obrigado por jogar!!!")
+    print("Obrigado por jogar!!!") 
